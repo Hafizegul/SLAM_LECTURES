@@ -29,7 +29,7 @@ def find_cylinder_pairs(cylinders, reference_cylinders, max_radius):
 
     return cylinder_pairs
 
-# Verilen bir nokta listesinin kütle merkezini hesapla.
+'''compute_center fonksiyonu, bir nokta listesinin merkez noktasını hesaplayar.'''
 def compute_center(point_list):
     # Boş liste kontrolü.
     if not point_list:

@@ -105,7 +105,7 @@ def correct_pose(pose, trafo):
     x, y, theta = pose
     scale, cos_alpha, sin_alpha, dx, dy = trafo
 
-    # Pozisyon güncelleme (2D dönüşüm matrisinin uygulanması)
+    # Pozisyon güncellenir
     x_new = cos_alpha * x - sin_alpha * y + dx
     y_new = sin_alpha * x + cos_alpha * y + dy
 

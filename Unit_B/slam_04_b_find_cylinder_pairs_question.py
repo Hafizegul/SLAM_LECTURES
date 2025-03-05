@@ -13,28 +13,22 @@ from slam_04_a_project_landmarks import\
 # Her bir silindir için en yakın referans_silindiri bul ve 
 # (i, j) index çiftini, burada i silindirin indeksi, j ise referans_silindirin
 # indeksi olacak şekilde, sonuç listesine ekle.
+'''
+compute_distance fonksiyonu iki silindir arasındaki mesafeyi bulmak için
+öklid hesaplar.
+'''
 def compute_distance(i,j):
     x = i[0] - j[0]
     y = i[1] - j[1]
     return np.sqrt(x*x + y*y) 
 
 '''
-Bu fonksiyon, robotun LIDAR tarayıcısı ile tespit ettiği silindirleri (konum olarak) 
+find_cylinder_pairs fonksiyonu, robotun LIDAR tarayıcısı ile tespit ettiği silindirleri (konum olarak) 
 önceden bilinen referans silindirleriyle eşleştirerek, 
 hangi tespit edilen silindirin haritadaki hangi silindire karşılık geldiğini bulmaya çalışır.
 '''
 def find_cylinder_pairs(cylinders, reference_cylinders, max_radius):
     cylinder_pairs = []
-
-    # --->>> Buraya kodunuzu yazın.
-    # Tüm silindirler ve referans_silindirler üzerinde döngü yapın.
-    # Döngüde, eğer cylinders[i] en yakınsa reference_cylinders[j]'ye,
-    # ve mesafe max_radius'tan küçükse, o zaman 
-    # (i,j) çiftini cylinder_pairs listesine ekleyin, yani cylinder_pairs.append( (i,j) ).
-    
-    # list = [a,b,c,d,e]
-    # for i,j in enumerate(list) ----> i 0 j a | i 1 j b 
-    
     for i, cyl in enumerate(cylinders):
         for j, rcyl in enumerate(reference_cylinders):
             if compute_distance(cyl,rcyl) < max_radius:
