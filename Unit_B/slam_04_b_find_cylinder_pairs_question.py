@@ -1,7 +1,7 @@
 # Her silindirin kartesyen koordinatlarını dünya koordinat sistemi içinde bulun,
 # ardından referans silindir veri setinde en yakın noktayı bul ve çıktıyı al.
 # 04_b_find_cylinder_pairs
-# Claus Brenner, 14 KAS 2012
+
 import time
 import numpy as np
 from lego_robot import *
@@ -18,7 +18,11 @@ def compute_distance(i,j):
     y = i[1] - j[1]
     return np.sqrt(x*x + y*y) 
 
-
+'''
+Bu fonksiyon, robotun LIDAR tarayıcısı ile tespit ettiği silindirleri (konum olarak) 
+önceden bilinen referans silindirleriyle eşleştirerek, 
+hangi tespit edilen silindirin haritadaki hangi silindire karşılık geldiğini bulmaya çalışır.
+'''
 def find_cylinder_pairs(cylinders, reference_cylinders, max_radius):
     cylinder_pairs = []
 
